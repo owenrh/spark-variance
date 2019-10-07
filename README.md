@@ -44,6 +44,8 @@ Then we run our start slaves command again, which starts our final straggling wo
 start-slave.sh spark://mbp.local:7077
 ```
 
+___Note, for DStreams you will need 5 workers with a core a piece, as a core is reserved for the Stream Receiver. For Structured Streaming you will only need 4 workers, as it doesn't require the extract core. The other point to note for the DStreams setup is that it is non-deterministic, as sometimes the Streaming Receiver will land on the 'straggler' node. It's far from ideal : /___
+
 ### Setup Elasticsearch and Kibana for metrics
 _TODO_ - if anyone is interested in this raise an issue and I'll sort out the extra info - in the meantime you will need to comment out any lines in the scenario configuration that refer to the metrics configuration or jar file
 
