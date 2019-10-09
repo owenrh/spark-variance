@@ -52,7 +52,7 @@ _TODO_ - if anyone is interested in this raise an issue and I'll sort out the ex
 ### Running scenarios
 First build this project using `mvn clean package`. Then run the appropriate scenario using:
 ```
-spark-submit --properties-file <backpressure scenario>.properties --master spark://mbp.local:7077 --class com.dataflow.spark.VarianceApp target/spark-variance-1.0-SNAPSHOT.jar 
+spark-submit --properties-file scenarios/<backpressure scenario>.properties --master spark://mbp.local:7077 --class com.dataflow.spark.VarianceApp target/spark-variance-1.0-SNAPSHOT.jar 
 ```
 
 Note, for the Structured Streaming/Continuous Processing scenarios the class will need to be changed from `VarianceApp` to `VarianceStructuredApp`.
